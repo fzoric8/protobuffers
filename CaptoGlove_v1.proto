@@ -1,0 +1,29 @@
+syntax = "proto3" 
+
+message BatteryLevel {
+     required int32 level = 1
+}
+
+message DeviceInformation {
+     string device_name = 1
+}
+
+message ScanParamaters {
+	int32 connection_supervision_timeout_multiplier = 1
+        int32 slave_latency = 2
+        int32 max_connection_interval = 3
+        int32 min_connection_interval = 4
+
+}
+
+message PeripheralPrefferedConnectionParameters {
+	int32 mtu
+
+}
+
+message JoystickFeedback {
+	int32 Rx
+        int32 Ry
+        int32 Rz
+        int32 PlaceHolder
+}
