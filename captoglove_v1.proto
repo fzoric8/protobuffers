@@ -1,0 +1,36 @@
+syntax = "proto3"; 
+
+message BatteryLevelMsg {
+     int32 level = 1;
+}
+
+message DeviceInformationMsg {
+     string device_name = 1;
+}
+
+message ScanParamatersMsg {
+	int32 scan_interval = 1;
+}
+
+message PeripheralPrefferedConnectionParametersMsg {
+	int32 connection_supervision_timeout_multiplier = 1;
+        int32 slave_latency = 2;
+        int32 max_connection_interval = 3;
+        int32 min_connection_interval = 4;
+
+}
+
+message JoystickFeedbackMsg {
+	int32 rx = 1;
+        int32 ry = 2;
+        int32 rz = 3;
+        int32 place_holder = 4;
+}
+
+message FingerFeedbackMsg {
+	int32 thumb_finger = 1;
+        int32 index_finger = 2;
+        int32 middle_finger = 3;
+        int32 ring_finger = 4;
+        int32 little_finger = 5;
+}
