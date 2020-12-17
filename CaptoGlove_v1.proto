@@ -1,7 +1,7 @@
 syntax = "proto3"; 
 
 message BatteryLevelMsg {
-     required int32 level = 1;
+     int32 level = 1;
 }
 
 message DeviceInformationMsg {
