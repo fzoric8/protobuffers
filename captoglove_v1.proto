@@ -18,7 +18,7 @@ enum LogTypeEnum {
     LogType_Error                       = 2  [(enumval_comment) = "Indicates a error log."];
     LogType_Fatal                       = 3  [(enumval_comment) = "Indicates a fatal log."];
     LogType_Debug                       = 4  [(enumval_comment) = "Indicates a debug log."];
-};
+}
 
 message LogMsg{
     option (message_comment) = "Log message";
@@ -29,8 +29,8 @@ message LogMsg{
     option (ros_topic) = "robot/general/log";
     //option (ros_msg_mapping) = "brain_msgs::LogStatus";
 
-    required LogTypeEnum    Type    = 1  [(field_comment)="Log type."           , (field_unit)="Enum", (field_m$
-    required string         Message = 2  [(field_comment)="Log contents."   , (field_unit)="Text", (field_msg_m$
+    required LogTypeEnum    Type    = 1;
+    required string         Message = 2;
 }
 
 
