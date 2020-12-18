@@ -9,6 +9,31 @@ option (device_name) = "Captoglove v1";
 option (maintainer_name) = "Filip Zoric"; 
 option (maintainer_email) = "filip.zoric@fer.hr";
 
+
+enum LogTypeEnum {
+    option (enum_comment) = "Log type enumerator";
+
+    LogType_Info                        = 0  [(enumval_comment) = "Indicates a info log."];
+    LogType_Warning                     = 1  [(enumval_comment) = "Indicates a warning log."];
+    LogType_Error                       = 2  [(enumval_comment) = "Indicates a error log."];
+    LogType_Fatal                       = 3  [(enumval_comment) = "Indicates a fatal log."];
+    LogType_Debug                       = 4  [(enumval_comment) = "Indicates a debug log."];
+};
+
+message LogMsg{
+    option (message_comment) = "Log message";
+    option (message_number) = "4";
+    option (message_type) = "Read";
+    option (ros_include_header) = true;
+    option (ros_type) = "Publisher";
+    option (ros_topic) = "robot/general/log";
+    //option (ros_msg_mapping) = "brain_msgs::LogStatus";
+
+    required LogTypeEnum    Type    = 1  [(field_comment)="Log type."           , (field_unit)="Enum", (field_m$
+    required string         Message = 2  [(field_comment)="Log contents."   , (field_unit)="Text", (field_msg_m$
+}
+
+
 message BatteryLevelMsg {
      option (message_comment) = "Battery state msg"; 
      option (message_number) = "1"; 
